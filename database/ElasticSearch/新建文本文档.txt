@@ -1,0 +1,11 @@
+1、需要使用非root账户开启elasticsearch
+2、修改elasticsearch.yml文件中的network.host才可以非本地访问
+3、修改完后需要
+vim /etc/security/limits.conf
+* soft nofile 65536
+* hard nofile 65536
+* soft nproc 4096
+* hard nproc 4096
+vim /etc/sysctl.conf
+vm.max_map_count=655360
+sysctl -p

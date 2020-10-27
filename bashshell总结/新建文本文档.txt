@@ -1,0 +1,4 @@
+groupadd es	创建组
+useradd tang -g es	创建用户 useradd 用户名 -g 组名
+passwd tang	创建密码
+chown -R 	给用户赋权限
