@@ -1,0 +1,37 @@
+一、基本概念
+NRT（near real time）：接近实时的搜索平台
+索引（index）：拥有相似特征的文档	->	数据库
+由一个名字标识构成（必须全部是小写字母）
+类型（type）：索引逻辑上的分类	->	类似表，应该是schema
+文档（document）			->	行
+索引：
+poems
+类型：
+"poem":{
+    "properties":{
+        "title":{
+            "type":"keyword"		->直接建立反向索引
+        },  
+        "author":{
+            "type":"keyword"
+        },  
+        "dynasty":{
+            "type":"keyword"
+        },  
+        "words":{
+            "type":"integer"
+        },  
+        "content":{
+            "type":"text"			->分词后建立反向索引
+        },  
+  }
+}
+文档
+{
+    "title":"静夜思",
+    "author":"李白",
+    "dynasty":"唐",
+    "words":"20",
+    "content":"床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+}
+注意：elasticsearch6之前可以创建多种类型，在es6之后只可以兼容，在es8之后将完全移除
