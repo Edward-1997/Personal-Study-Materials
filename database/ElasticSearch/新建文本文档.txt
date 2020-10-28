@@ -1,6 +1,8 @@
 1、需要使用非root账户开启elasticsearch
+
 2、修改elasticsearch.yml文件中的
-network.host，cluster.initial_master_nodes: ["node-1"]
+network.host：0.0.0.0
+cluster.initial_master_nodes: ["node-1"]
 才可以非本地访问
 
 3、修改完后需要
