@@ -6,7 +6,7 @@ cc = gcc				//相当于C语言中的宏
 prom = calc
 deps = $(shell find ./ -name "*.h") 	//使用shell命令找到当前目录下.h依赖文件
 src = $(shell find ./ -name "*.c")	//使用shell命令找到当前目录下.c原文件
-obj = $(src:%.c=%.o) 
+obj = $(src:%.c=%.o) 		//字符替换函数，它会将src所有的.c字串替换成.o
     
 $(prom): $(obj)
        $(cc) -o $(prom) $(obj)
