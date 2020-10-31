@@ -5,7 +5,6 @@ git checkout dev 切换到dev分支
 git branch -r 查看远程分支
 git branch -a 查看所有分支，包括远程和本地
 git branch -d dev 删除分支dev
-git push origin --delete Chapater6   可以删除远程分支Chapater6
 git push -u origin dev:dev 将本地dev分支推送到远程仓库中
 git pull master 将远程仓库master分支的代码下载到本地
 git commit -m "注释" 提交代码到本地仓库

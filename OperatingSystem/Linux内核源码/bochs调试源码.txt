@@ -1,0 +1,7 @@
+http://www.oldlinux.org/Linux.old/bochs/    下载linux-0.11-devel-040329.rar 
+1、安装bochs.exe，然后将剩余文件copy至bochs目录下
+2、在bochs.exe安装的根目录下：bochsdbg -q -f bochsrc-hd-large.bxrc，进入调试
+b addr		在addr地址处打断点
+blist		显示所有断点信息
+c		运行到下一个断点结束
+print-stack	打印堆栈信息
