@@ -12,7 +12,8 @@ git branch --set-upstream-to=origin/master master
 git log --oneline /*打印日志*/ --graph /*打印分支日志*/
 git reflog 提交点ID/版本号tag 查询所有提交点
 git tag -a v1.0(版本号) cdeef67（每个文件的ID）
-git  reset --hard 提交点/版本号 （回退到某提交点）
+git fetch -all 将远程所有代码拉到本地
+git reset --hard 提交点/版本号 （回退到某提交点）
 git branch -d gateway 删除本地gateway分支
 git push origin --delete gateway 删除远端gateway分支
 ```
@@ -22,8 +23,8 @@ git push origin --delete gateway 删除远端gateway分支
 
 （1）在dev环境下开发：
 
-	git  add .
-	git  commit -m ‘dev'
+	git add .
+	git commit -m ‘dev'
 	git push -u origin dev
 
 （2）切换到master分支：
@@ -67,16 +68,25 @@ git log --graph
 ---
 ### 五、避免代码覆盖
 
-	1、提交前先把本地修改存入栈 git stash save
-	
-	2、从服务端更新代码 git pull
+1、提交前先把本地修改存入栈 git stash save
 
-  3、弹出代码git pop
+2、从服务端更新代码 git pull
 
-  4、若有冲突解决冲突
+3、弹出代码git pop
 
-  5、添加代码 git add.
+4、若有冲突解决冲突
 
-  6、提交代码 git commit -m 'msg'
+5、添加代码 git add.
 
-  7、推送远程 git <!--push-->
+6、提交代码 git commit -m 'msg'
+
+7、推送远程 git <!--push-->
+
+六、git推荐用法
+
+```
+git fetch origin dev:tmp
+git diff tmp
+git merge tmp
+```
+
