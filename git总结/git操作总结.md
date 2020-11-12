@@ -16,6 +16,7 @@ git fetch -all 将远程所有代码拉到本地
 git reset --hard 提交点/版本号 （回退到某提交点）
 git branch -d gateway 删除本地gateway分支
 git push origin --delete gateway 删除远端gateway分支
+git rm --cached .idea 删除本地版本库中.idea/文件夹下所有的文件
 ```
 ---
 ## 实际操作：
