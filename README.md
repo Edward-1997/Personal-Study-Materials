@@ -2,4 +2,4 @@
 
 个人学习资料：
 
-[OS](#./OperatingSystem)
+[关于OS的学习介绍](./OperatingSystem/README.md)
