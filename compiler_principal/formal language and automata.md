@@ -67,7 +67,7 @@
 
 > <img src="./picture/形式语言与自动机-第二章(一)11.png" style="zoom:60%;" />
 
-### 四、减少有穷自动机中状态的化简
+### 四、减少有穷自动机中状态的化简(重要概念)
 
 > 定义2.8 对于所有的w ∈Σ^*^，如果
 >
@@ -200,3 +200,117 @@
 (d) L((aa^*^)^*^b^*^)
 
 > <img src="C:\Users\大写的T\AppData\Roaming\Typora\typora-user-images\image-20201112194218901.png" style="zoom:67%;" />
+
+8、考虑下面的通用转移图：
+
+<img src="./picture/形式语言与自动机-第三章-(二)8a问题.png" style="zoom:60%;" />
+
+(a)给出一个与之等价的只有两个状态的通用转移图。
+
+(b)这个图接受的语言是什么?
+
+> (a)
+>
+> ![](./picture/形式语言与自动机-第三章-(二)8a.png)
+>
+> (b) r = a^*^(a+b)ab(ab+bb)^*^(λ + (aa^*^(a+b)ab(bb+ab)^*^)^*^)
+
+9、下面这个转移图接受的语言是什么？
+
+<img src="./picture/形式语言与自动机-第三章-(二)9问题.png" style="zoom:60%;" />
+
+> r = a^*^(a(a+b)(a+b)^*^+(b+c))(a+b^*^)^*^
+
+10、分别给出下列自动机接受的语言的正则表达式：
+
+<img src="./picture/形式语言与自动机-第三章-(二)10问题.png" style="zoom:60%;" />
+
+> (a)、r = b^*^aa^*^ab^*^a
+>
+> (b)、r = (ab)^*^+(aabb)^*^+(bbb)^*^
+>
+> (c)、r = a^*^ba^*^
+
+12、为下面定义在{a,b}上的语言构造正则表达式：
+
+(a) L = {w | n~a~(w) 和n~b~(w)都是偶数}
+
+(b) L = {w | (n~a~(w) -n~b~(w)) mod 3 =1}
+
+(c) L = {w | (n~a~(w) -n~b~(w)) mod 3 =1}
+
+(d) L = {w | (n~a~(w) -n~b~(w)) mod 3 =1}
+
+> (a) r = (aa)^*^(bb)^*^(aa)^*^
+>
+> (b) r = (a+bb)(ab)^*^((aa+b)(a+bb)(ab)^*^)^*^
+>
+> 
+
+### 三、正则文法
+
+1、构造dfa接受由下面文法生成的语言：
+
+S -> abA
+
+A -> baB
+
+B -> aA | bb
+
+> 
+
+2、构造一个能生成语言*L*(aa^*^(ab+a)^*^)的正则文法：
+
+> S -> aA
+>
+> A -> aA | λ
+>
+> A -> aB | abB
+>
+> B -> aB | abB | λ
+
+3、为习题一构造一个左线性文法
+
+> S -> Abb
+>
+> A -> Bba
+>
+> B -> Aa | ab
+
+4、为下面的语言构造左线性文法和右线性文法：
+
+<div style = "text-align:center">L = {a<sup>n</sup>b<sup>m</sup> | n ≥ 2，m ≥ 3}</div>
+
+> 右线性文法：
+>
+> <div style = "margin-left:40%">
+>     <div align = "left">
+>         <b>
+>             <p>S -> aaA;</p>
+>             <p>A -> aA | bbbB;</p>
+>             <p>B -> bB | λ;</p>
+>         </b>
+>     </div>
+> </div>
+>
+> 左线性文法：
+>
+> <div style = "margin-left:40%">
+>     <div align = "left">
+>         <b>
+>             <p>S -> Sb | Abbb;</p>
+>             <p>A -> Aa | Baa;</p>
+>             <p>B -> λ</p></b>
+>     </div>
+> </div>
+
+5、为语言*L*((aab^*^ab)^*^)构造右线性文法
+
+> <div style = "margin-left:40%">
+>     <div align = "left">
+>         <b>
+>             <p>S -> aaA | λ;</p>
+>             <p>A -> bA | aB;</p>
+>             <p>B -> bS;</p></b>
+>     </div>
+> </div>
