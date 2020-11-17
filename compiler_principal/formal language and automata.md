@@ -314,3 +314,82 @@ B -> aA | bb
 >             <p>B -> bS;</p></b>
 >     </div>
 > </div>
+
+6、构造一个正则文法，使之产生的语言定义在Σ ={a,b}上，并且这个语言中的每一个符号串至多有3个a
+
+> <div style = "margin-left:40%">
+>  <div align = "left">
+>      <b>
+>          <p>S -> bS | aA | λ;</p>
+>          <p>A -> bA | aB | λ;</p>
+>          <p>B -> bB | aC | λ;</p>
+>          <p>C -> bC | λ;</p>
+>      </b>
+>  </div>
+> </div>
+
+9、为习题5中的语言构造一个左线性文法
+
+> <div style = "margin-left:40%">
+>  <div align = "left">
+>      <b>
+>          <p>S -> Ab | λ;</p>
+>          <p>A -> Ba;</p>
+>          <p>B -> Bb | Saa;</p></b>
+>  </div>
+> </div>
+
+10、为语言L = {a^n^b^m^ | n+m是偶数}构造一个正则文法
+
+> <div style = "margin-left:40%">
+>  <div align = "left">
+>      <b>
+>          <p>S -> aA |bB | λ;</p>
+>          <p>A -> aS | bD;</p>
+>          <p>B -> bD;</p>
+>          <p>D -> bB | λ;</p>
+>      </b>
+>  </div>
+> </div>
+
+11、构造正则文法，使它可以生成语言L = {w∈{a,b}^*^ | n~a~(w) + 3n~b~(w) 是偶数}
+
+> <div style = "margin-left:40%">
+>  <div align = "left">
+>      <b>
+>          <p>S -> aA |bA | λ;</p>
+>          <p>A -> bS | aS;</p>
+>      </b>
+>  </div>
+> </div>
+
+12、分别为下列定义在{a,b}上的语言构造正则文法
+
+(a) L = {w | n~a~(w) 和n~b~(w)都是偶数}
+
+> 先构造dfa:
+>
+> <img src="./picture/形式语言与自动机-第三章-(三)12a.png" style="zoom:60%;" />
+>
+> <div style = "margin-left:40%">
+>  <div align = "left">
+>      <b>
+>          <p>S -> aA |bC | λ;</p>
+>          <p>A -> babB | aS;</p>
+>          <p>B -> babA | aA | λ;</p>
+>          <p>C -> abaD | bS;</p>
+>          <p>D -> abaC | bC | λ;</p>
+>      </b>
+>  </div>
+> </div>
+
+(a) L = {w | n~a~(w) +n~b~(w) = 1}
+
+> <div style = "margin-left:40%">
+> <div align = "left">
+>   <b>
+>       <p>S -> aA |bbA;</p>
+>       <p>A -> abA | bS | aaS | λ;</p>
+>   </b>
+> </div>
+> </div>
