@@ -1,6 +1,6 @@
 1、jps -m 查看应用ID 
 
-2、jstack 应用ID  检查应用的死锁情况
+2、jstack 应用ID  检查应用的**死锁**情况
 
 3、查看java字节码：在项目的根目录下输入 javap -verbose 包名+类名
 
@@ -48,3 +48,9 @@ CCSMX：最大压缩类空间大小
 CCSC：当前压缩类空间大小
 YGC：年轻代gc次数
 FGC：老年代GC次数
+
+5、jmap -hisof:live {pid} 打印java当前**存活对象**信息
+
+​	jmap -heap {pid} 打印java**堆内存**信息
+
+6、jvisualvm：提供java**进程可视化界面**
