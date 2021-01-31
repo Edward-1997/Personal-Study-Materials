@@ -1,0 +1,78 @@
+    public int numSimilarGroups(String[] strs) {
+        int length = strs.length;
+        Union u = new Union(length);
+
+        for (int i = 0; i < length; i++) {
+            for (int j = i+1; j < length; j++) {
+                if (isSimilar(strs[i],strs[j])) {
+                    u.union(i,j);
+                }
+            }
+        }
+        return u.setCount;
+    }
+
+    public boolean isSimilar(String s1,String s2) {
+        char[] c1 = s1.toCharArray();
+        char[] c2 = s2.toCharArray();
+
+        int count = 0;
+        int index1 = -1,index2 = -1;
+        for (int i = 0; i < c1.length; i++) {
+            if (c1[i] != c2[i]) {
+                count++;
+                if (count > 2) {
+                    return false;
+                }
+                index1 = i;
+                index2 = index1;
+            }
+        }
+
+        if (count != 2) {
+            return false;
+        }
+        
+        if (c1[index1] != c2[index2]) {
+            return false;
+        }
+        return true;
+    }
+
+    private class Union {
+        int[] parent;
+        int[] rank;
+        int setCount;
+
+        public Union(int total) {
+            parent = new int[total];
+            rank = new int[total];
+            setCount = total;
+            Arrays.fill(rank,1);
+            for (int i = 0; i < total; i++) {
+                parent[i] = i;
+            }
+        }
+
+        public void union(int x,int y) {
+            int rootX = find(x);
+            int rootY = find(y);
+            if (rootX == rootY) {
+                return;
+            }
+
+            if (rank[rootX] == rank[rootY]) {
+                parent[rootX] = rootY;
+                rank[rootY]++;
+            } else if (rank[rootX] < rank[rootY]) {
+                parent[rootX] = rootY;
+            } else {
+                parent[rootY] = rootX;
+            }
+            setCount--;
+        }
+        
+        public int find(int x) {
+            return x == parent[x] ? x : find(parent[x]);
+        }
+    }
