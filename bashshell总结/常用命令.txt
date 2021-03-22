@@ -1,7 +1,10 @@
+用户权限
 groupadd es	创建组
 useradd tang -g es	创建用户 useradd 用户名 -g 组名
 passwd tang	创建密码
 chown -R 	给用户赋权限
+主机状态
+free -m		查看磁盘状态
 netstat		查询网络状态 
 -tlunp
 -t 	tcp链接
@@ -9,3 +12,7 @@ netstat		查询网络状态
 -r	显示路由表
 -n	不保留名称
 -p	显示程序/PID
+ps -ef		查看进程
+文本操作
+sed -i
+awk 
