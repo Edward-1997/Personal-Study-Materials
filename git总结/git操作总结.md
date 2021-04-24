@@ -91,3 +91,16 @@ git diff tmp
 git merge tmp
 ```
 
+
+
+```text
+git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -5 | awk '{print$1}')"
+```
+
+
+
+
+
+```text
+git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch 1c215003847a526ea39d383e1df0bbcebdd0f0f0' --prune-empty --tag-name-filter cat -- --all
+```
